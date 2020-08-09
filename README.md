@@ -16,4 +16,4 @@ The R0 is the base reproductive number, and represents the average number of inf
 ## Known issues
 1) Resetting the simulation randomly freezes either the graph or the simulation. Resetting once or twice more should fix this. 
 2) Occasionally the graph line traces spike when the simulation is reset. Again, another reset should fix this.  
-3) The app doesn't handle losing focus well, and may exhibit weird behavior when returning to it after the screen has been locked or you've returned to it from another app. As before, a reset should fix this. 
+3) The app doesn't handle losing focus well, and may exhibit weird behavior like freezing and messing up the agent infectivity timers when returning to it after the screen has been locked or you've returned to it from another app. As before, a reset should fix this. 
