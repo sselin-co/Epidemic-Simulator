@@ -11,7 +11,7 @@ The simulation consists of 100 - 1000 agents that bounce around a canvas in rand
 
 I've also implemented mask wearing and social distancing. Mask wearing works by reducing the effective infective radius of the agent consistent with the findings [of this study, so I used 80% as an underestimate.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7301882/#:~:text=We%20show%20that%20the%20use,%2C%20cumulatively%2C%20during%20cough%20cycles.) This reduces the range an agent can infect a susceptible agent. Social distancing currently functions by setting the velocity of an agent at the start of the simulation to 0, effectively reducing the total number of contacts an agent can have.
 
-The R0 is the base reproductive number, and represents the average number of infections a single infected generates over the population. It changes a lot based on environmental variables, so I've implemented the average R0 over the course of the simulation and the R0 of the current frame. 
+The R0 is the base reproductive number, and represents the average number of infections a single infected generates over the population. It changes a lot based on environmental variables, so I've implemented the average R0 over the course of the simulation and the R0 of the current day. 
 
 ## Known issues
 1) Resetting the simulation randomly freezes either the graph or the simulation. Resetting once or twice more should fix this. 
