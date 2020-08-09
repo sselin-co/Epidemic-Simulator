@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Disease Modeling</string>
+    <string name="layout_front_toolbar_text">Simulation</string>
+    <string name="layout_back_toolbar_text">Settings</string>
+    <string name="graph_tooltip">Infection Graph</string>
+    <string name="simulation_tooltip">Infection Simulation</string>
+    <string name="infection_data">Infection Data</string>
+    <string name="population_number">"Population Size: %d</string>
+    <string name="settings_reset_dialog">Close settings to reset the simulation.</string>
+    <string name="simulation_reset_dialog">Simulation Reset</string>
+    <string name="population_scrollview_title">Population Modifiers</string>
+    <string name="person_size">Person Size: %.1fx</string>
+    <string name="disease_scrollview_title">Disease Modifiers</string>
+    <string name="infection_chance">Infection Chance: %d\%%</string>
+    <string name="infection_radius">Infection Radius: %d units</string>
+    <string name="social_distancing_percent">Percentage of Population Social Distancing: %d\%%</string>
+    <string name="mask_wearing_percent">Percentage of Population Wearing Masks: %d\%%</string>
+    <string name="number_starting_infected">Number of Starting Infected: %d</string>
+    <string name="days_infected">Days Infectious: %d</string>
+    <string name="days_per_second">Seconds Per Day: %d</string>
+</resources>

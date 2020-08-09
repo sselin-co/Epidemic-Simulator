@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backLayerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:elevation="0dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/populationSettingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/population_scrollview_title"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/populationSettingsScrollView"
+        app:layout_constraintStart_toStartOf="@+id/populationSettingsScrollView" />
+
+    <TextView
+        android:id="@+id/DiseaseSettingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/disease_scrollview_title"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/diseaseSettingsScrollView"
+        app:layout_constraintStart_toStartOf="@+id/diseaseSettingsScrollView" />
+
+    <ScrollView
+        android:id="@+id/populationSettingsScrollView"
+        android:layout_width="177dp"
+        android:layout_height="399dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/rounded_corners"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.37">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/secondsPerDayCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="#00000000"
+                app:cardElevation="0dp"
+                app:rippleColor="@color/colorAccent"
+                app:strokeColor="#00000000"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/secondsPerDayLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/secondsPerDayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="5dp"
+                        android:text="@string/days_per_second"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/textColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/secondsPerDaySlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:stepSize="1"
+                        android:value="1"
+                        android:valueFrom="1"
+                        android:valueTo="7"
+                        android:visibility="visible"
+                        app:haloColor="@color/sliderTrackActive"
+                        app:haloRadius="20dp"
+                        app:labelBehavior="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/secondsPerDayTextView"
+                        app:thumbColor="@color/textColor"
+                        app:thumbRadius="10dp"
+                        app:tickColorActive="@color/textColor"
+                        app:tickColorInactive="@color/colorAccent"
+                        app:trackColorActive="@color/textColor"
+                        app:trackColorInactive="@color/sliderTrackActive" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/populationNumberCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#00000000"
+                app:cardElevation="0dp"
+                app:rippleColor="@color/colorAccent"
+                app:strokeColor="#00000000"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/populationCardLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/populationSizeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="5dp"
+                        android:text="@string/population_number"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/textColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/populationSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:stepSize="100"
+                        android:value="500"
+                        android:valueFrom="0"
+                        android:valueTo="1000"
+                        android:visibility="visible"
+                        app:haloColor="@color/sliderTrackActive"
+                        app:haloRadius="20dp"
+                        app:labelBehavior="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/populationSizeTitle"
+                        app:thumbColor="@color/textColor"
+                        app:thumbRadius="10dp"
+                        app:tickColorActive="@color/textColor"
+                        app:tickColorInactive="@color/sliderTrackActive"
+                        app:trackColorActive="@color/textColor"
+                        app:trackColorInactive="@color/sliderTrackActive" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/personSizeCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="#00000000"
+                app:cardElevation="0dp"
+                app:rippleColor="@color/colorAccent"
+                app:strokeColor="#00000000"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/personSizeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/personSizeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="5dp"
+                        android:text="@string/person_size"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/textColor"
+                        app:layout_constraintBottom_toBottomOf="@+id/personSizeSlider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.507"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/personSizeSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:stepSize="0.1"
+                        android:value="1"
+                        android:valueFrom="0"
+                        android:valueTo="2"
+                        android:visibility="visible"
+                        app:haloColor="@color/sliderTrackActive"
+                        app:haloRadius="20dp"
+                        app:labelBehavior="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/personSizeTitle"
+                        app:thumbColor="@color/textColor"
+                        app:thumbRadius="10dp"
+                        app:tickColorActive="@color/textColor"
+                        app:tickColorInactive="@color/colorAccent"
+                        app:trackColorActive="@color/textColor"
+                        app:trackColorInactive="@color/sliderTrackActive" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/socialDistancingCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#00000000"
+                app:cardElevation="0dp"
+                app:rippleColor="@color/colorAccent"
+                app:strokeColor="#00000000"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/socialDistancingLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/socialDistancingTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="5dp"
+                        android:text="@string/social_distancing_percent"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/textColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/socialDistancingSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:stepSize="5"
+                        android:value="0"
+                        android:valueFrom="0"
+                        android:valueTo="100"
+                        android:visibility="visible"
+                        app:haloColor="@color/sliderTrackActive"
+                        app:haloRadius="20dp"
+                        app:labelBehavior="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/socialDistancingTextView"
+                        app:thumbColor="@color/textColor"
+                        app:thumbRadius="10dp"
+                        app:tickColorActive="@color/textColor"
+                        app:tickColorInactive="@color/colorAccent"
+                        app:trackColorActive="@color/textColor"
+                        app:trackColorInactive="@color/sliderTrackActive" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/maskWearingCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#00000000"
+                app:cardElevation="0dp"
+                app:rippleColor="@color/colorAccent"
+                app:strokeColor="#00000000"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/maskWearingLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/maskWearingTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="5dp"
+                        android:text="@string/social_distancing_percent"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/textColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/maskWearingSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:stepSize="5"
+                        android:value="0"
+                        android:valueFrom="0"
+                        android:valueTo="100"
+                        android:visibility="visible"
+                        app:haloColor="@color/sliderTrackActive"
+                        app:haloRadius="20dp"
+                        app:labelBehavior="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/maskWearingTextView"
+                        app:thumbColor="@color/textColor"
+                        app:thumbRadius="10dp"
+                        app:tickColorActive="@color/textColor"
+                        app:tickColorInactive="@color/colorAccent"
+                        app:trackColorActive="@color/textColor"
+                        app:trackColorInactive="@color/sliderTrackActive" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/diseaseSettingsScrollView"
+        android:layout_width="170dp"
+        android:layout_height="350dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.322">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/startingInfectedCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="#00000000"
+                app:cardElevation="0dp"
+                app:rippleColor="@color/colorAccent"
+                app:strokeColor="#00000000"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/startingInfectedLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/startingInfectedTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="5dp"
+                        android:text="@string/number_starting_infected"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/textColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/startingInfectedSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:stepSize="1"
+                        android:value="1"
+                        android:valueFrom="1"
+                        android:valueTo="100"
+                        android:visibility="visible"
+                        app:haloColor="@color/sliderTrackActive"
+                        app:haloRadius="20dp"
+                        app:labelBehavior="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/startingInfectedTextView"
+                        app:thumbColor="@color/textColor"
+                        app:thumbRadius="10dp"
+                        app:tickColorActive="@color/textColor"
+                        app:tickColorInactive="@color/sliderTrackActive"
+                        app:trackColorActive="@color/textColor"
+                        app:trackColorInactive="@color/sliderTrackActive" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/infectionChanceCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="#00000000"
+                app:cardElevation="0dp"
+                app:rippleColor="@color/colorAccent"
+                app:strokeColor="#00000000"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/infectionChanceLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/infectionChanceTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="5dp"
+                        android:text="@string/infection_chance"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/textColor"
+                        app:layout_constraintBottom_toBottomOf="@+id/infectionChanceSlider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.507"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/infectionChanceSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:stepSize="0.01"
+                        android:value="0.5"
+                        android:valueFrom="0"
+                        android:valueTo="1"
+                        android:visibility="visible"
+                        app:haloColor="@color/sliderTrackActive"
+                        app:haloRadius="20dp"
+                        app:labelBehavior="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/infectionChanceTitle"
+                        app:thumbColor="@color/textColor"
+                        app:thumbRadius="10dp"
+                        app:tickColorActive="@color/textColor"
+                        app:tickColorInactive="@color/sliderTrackActive"
+                        app:trackColorActive="@color/textColor"
+                        app:trackColorInactive="@color/sliderTrackActive" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/infectionRadiusCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="#00000000"
+                app:cardElevation="0dp"
+                app:rippleColor="@color/colorAccent"
+                app:strokeColor="#00000000"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/infectionRadiusLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/infectionRadiusTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="5dp"
+                        android:text="@string/infection_radius"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/textColor"
+                        app:layout_constraintBottom_toBottomOf="@+id/infectionRadiusSlider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.507"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/infectionRadiusSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:stepSize="5"
+                        android:value="50"
+                        android:valueFrom="0"
+                        android:valueTo="100"
+                        android:visibility="visible"
+                        app:haloColor="@color/sliderTrackActive"
+                        app:haloRadius="20dp"
+                        app:labelBehavior="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/infectionRadiusTitle"
+                        app:thumbColor="@color/textColor"
+                        app:thumbRadius="10dp"
+                        app:tickColorActive="@color/textColor"
+                        app:tickColorInactive="@color/colorAccent"
+                        app:trackColorActive="@color/textColor"
+                        app:trackColorInactive="@color/sliderTrackActive" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/daysInfectedCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="#00000000"
+                app:cardElevation="0dp"
+                app:rippleColor="@color/colorAccent"
+                app:strokeColor="#00000000"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/daysInfectedLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/daysInfectedTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="5dp"
+                        android:text="@string/days_infected"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/textColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/daysInfectedSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:stepSize="1"
+                        android:value="5"
+                        android:valueFrom="1"
+                        android:valueTo="30"
+                        android:visibility="visible"
+                        app:haloColor="@color/sliderTrackActive"
+                        app:haloRadius="20dp"
+                        app:labelBehavior="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/daysInfectedTextView"
+                        app:thumbColor="@color/textColor"
+                        app:thumbRadius="10dp"
+                        app:tickColorActive="@color/textColor"
+                        app:tickColorInactive="@color/sliderTrackActive"
+                        app:trackColorActive="@color/textColor"
+                        app:trackColorInactive="@color/sliderTrackActive" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
