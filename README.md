@@ -19,3 +19,6 @@ The R0 is the base reproductive number, and represents the average number of inf
 1) Resetting the simulation randomly freezes either the graph or the simulation. Resetting once or twice more should fix this. 
 2) Occasionally the graph line traces spike when the simulation is reset. Again, another reset should fix this.  
 3) The app doesn't handle losing focus well, and may exhibit weird behavior like freezing and messing up the agent infectivity timers when returning to it after the screen has been locked or you've returned to it from another app. As before, a reset should fix this. 
+
+## Lessons Learnt
+Unfortunately, Processing for Android is not a particularly well documented library, and this there wasn't much information available on why the app is prone to breaking when multitasking. Despite defining a few Android lifecycle override methods that attempted to suspend all simulation rendering manually, it still refuses to be stable. This outcome may have been mitigated somewhat if I had implemented more in depth testing early on. My next step is to port the simulation to the web in React, something substantially better documented. P5.js, the most modern and well documented version of Processing, will also be used, which will improve overall stability.
