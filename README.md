@@ -3,6 +3,14 @@
 
 I am currently working on a web implementation of this app, hopefully that will be complete within the next month!
 
+## Demo
+### Simulator in default state (500 agents, no epidemic controls)
+![](https://github.com/sselin-co/Epidemic-Simulator/blob/master/simualtor-default.gif)
+
+### Simulator with epidemic controls (1000 agents, 50/50 social distancing and masking)
+![](https://github.com/sselin-co/Epidemic-Simulator/blob/master/simulator-50_50.gif)
+
+## Description
 Epidemic Simulator is an educational Android app built with Android Studio, Processing 3, and a tiny bit of Kotlin. My aim was to create an easy to parse, visual way to understand disease spread in a population when no effective treatment is available, such as covid-19. It simulates the spread of a disease within a closed population with the [SIR epidemic model of disease spread](https://www.youtube.com/watch?v=Qrp40ck3WpI), and graphs the data as an epidemic curve. Mask wearing and social distancing have been implemented to demonstrate their effectiveness in flattening the curve of infected individuals. Data visualization is implemented using the [gwOptics Processing library](http://www.gwoptics.org/processing/gwoptics_p5lib/). The settings backdrop was implemented with [roiacult's Backdrop layout library](https://github.com/roiacult/BackdropLayout). I endeavored to follow Materal Design guidelines when building the app as a way to build my eye for design. To ensure stable performance with 1000 agents, I had to implement a [quadtree](https://jimkang.com/quadtreevis/) data structure that was used in my collision detection algorithm. 
 
 ## Disclaimer
