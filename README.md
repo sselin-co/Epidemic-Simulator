@@ -1,8 +1,6 @@
 # Epidemic-Simulator
 [Download the APK here](https://drive.google.com/drive/folders/1_-OPqu5pqzBq3KMcJbKA6ZfaDUErxZo5?usp=sharing)
 
-I am currently working on a web implementation of this app, hopefully that will be complete within the next month!
-
 ## Demo
 ### Simulator in default state (500 agents, no epidemic controls)
 ![](https://github.com/sselin-co/Epidemic-Simulator/blob/master/simualtor-default.gif)
